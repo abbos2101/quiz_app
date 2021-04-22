@@ -23,7 +23,7 @@ class WBoard extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: MyColors.greyLight,
+      color: MyColors.screen,
       child: Column(
         children: [
           SizedBox(height: 60),

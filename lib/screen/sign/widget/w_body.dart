@@ -45,7 +45,7 @@ class WBody extends StatelessWidget {
       children: [
         Expanded(child: SizedBox()),
         Expanded(
-          flex: 3,
+          flex: 4,
           child: Container(
             decoration: BoxDecoration(
               color: MyColors.white,
@@ -108,8 +108,11 @@ class WBody extends StatelessWidget {
   Widget _widgetImg() {
     return Column(
       children: [
-        Expanded(child: Center(child: Image.asset("assets/img/img_sign.png"))),
-        Expanded(child: SizedBox()),
+        Expanded(
+          flex: 2,
+          child: Center(child: Image.asset("assets/img/img_sign.png")),
+        ),
+        Expanded(flex: 3, child: SizedBox()),
       ],
     );
   }

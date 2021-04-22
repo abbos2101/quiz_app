@@ -3,26 +3,18 @@ part of 'setup_bloc.dart';
 @immutable
 abstract class SetupState {}
 
-class InitialState extends SetupState {}
-
-class SuccessState extends SetupState {
+class InitialState extends SetupState {
   final File? imageFile;
-  final List<String>? regionList;
+  final List<RegionModel>? regionList;
   final int? regionIndex;
 
-  SuccessState({this.imageFile, this.regionList, this.regionIndex});
-
-  SuccessState copyWith({
-    File? imageFile,
-    List<String>? regionList,
-    int? regionIndex,
-  }) {
-    return SuccessState(
-      imageFile: imageFile ?? this.imageFile,
-      regionList: regionList ?? this.regionList,
-      regionIndex: regionIndex ?? this.regionIndex,
-    );
-  }
+  InitialState({this.imageFile, this.regionList, this.regionIndex});
 }
 
-class LoadingState extends SetupState {}
+class LoadingState extends SetupState {
+  final File? imageFile;
+  final List<RegionModel>? regionList;
+  final int? regionIndex;
+
+  LoadingState({this.imageFile, this.regionList, this.regionIndex});
+}
