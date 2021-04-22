@@ -2,12 +2,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/util/color.dart';
-import '../screen/login/login_screen.dart';
-import '../screen/signup/signup_screen.dart';
+import 'package:quiz_app/screen/sign_login/login_screen.dart';
+import 'package:quiz_app/screen/sign_signup/signup_screen.dart';
 import '../sign_imp.dart';
-
-import 'w_loading.dart';
-import 'w_button.dart';
+import 'package:quiz_app/data/widget/widget.dart';
 
 class WBody extends StatelessWidget {
   final bool isLogin;

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/data/util/color.dart';
+import 'widget/w_body.dart';
 
 class HomeHomeScreen extends StatefulWidget {
   static Widget screen() => HomeHomeScreen();
@@ -11,7 +13,8 @@ class _HomeHomeScreenState extends State<HomeHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Home")),
+      backgroundColor: MyColors.screen,
+      body: WBody(),
     );
   }
 }

@@ -2,22 +2,23 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/util/color.dart';
 import 'package:quiz_app/data/util/style.dart';
-import 'package:quiz_app/screen/forgot_password/forgot_screen.dart';
-import '../../sign_imp.dart';
-import '../../widget/w_text_field.dart';
+import 'package:quiz_app/screen/setup_profile/setup_screen.dart';
+import 'package:quiz_app/screen/sign/sign_imp.dart';
+import 'package:quiz_app/data/widget/widget.dart';
 
-class LoginScreen extends StatefulWidget {
-  static Widget screen({SignImp? imp}) => LoginScreen(imp);
+class SignupScreen extends StatefulWidget {
+  static Widget screen({SignImp? imp}) => SignupScreen(imp);
 
   final SignImp? imp;
 
-  const LoginScreen(this.imp);
+  const SignupScreen(this.imp);
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _SignupScreenState createState() => _SignupScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignupScreenState extends State<SignupScreen> {
+  final ctrlFullName = TextEditingController();
   final ctrlMail = TextEditingController();
   final ctrlPassword = TextEditingController();
   bool enabled = false;
@@ -25,6 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   void initState() {
+    ctrlFullName.addListener(onChanged);
     ctrlMail.addListener(onChanged);
     ctrlPassword.addListener(onChanged);
     super.initState();
@@ -32,34 +34,34 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   void dispose() {
+    ctrlFullName.dispose();
     ctrlMail.dispose();
     ctrlPassword.dispose();
     super.dispose();
   }
 
   void onChanged() {
-    setState(() {
-      enabled = ctrlMail.text.isNotEmpty && ctrlPassword.text.isNotEmpty;
-    });
+    enabled = ctrlFullName.text.isNotEmpty &&
+        ctrlMail.text.isNotEmpty &&
+        ctrlPassword.text.isNotEmpty;
+    setState(() {});
   }
 
-  void onPressedLogin() async {
+  void onPressed() async {
     if (widget.imp != null) {
+      FocusScope.of(context).requestFocus(FocusNode());
       widget.imp!.showLoading(true);
       await Future.delayed(Duration(seconds: 3));
       widget.imp!.showLoading(false);
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (_) => ForgotScreen.screen()),
-      // );
-    }
-  }
 
-  void onPressedForgot() async {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (_) => ForgotScreen.screen()),
-    );
+      ctrlFullName.clear();
+      ctrlMail.clear();
+      ctrlPassword.clear();
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => SetupScreen.screen()),
+      );
+    }
   }
 
   @override
@@ -71,6 +73,17 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 20),
+              Text(
+                "Full Name",
+                style: MyTextStyle.regular.copyWith(fontSize: 13),
+              ),
+              SizedBox(height: 10),
+              WTextField(
+                controller: ctrlFullName,
+                iconData: CupertinoIcons.person,
+                hintText: "Enter your full name",
+              ),
               SizedBox(height: 20),
               Text(
                 "E-Mail Address",
@@ -97,16 +110,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 onPressedShow: () => setState(() => obscureText = !obscureText),
                 hintText: "Create account password",
               ),
-              SizedBox(height: 10),
-              Row(
-                children: [
-                  Expanded(child: SizedBox()),
-                  CupertinoButton(
-                    child: Text("Forgot Password?", style: MyTextStyle.normal),
-                    onPressed: onPressedForgot,
-                  ),
-                ],
-              ),
               SizedBox(height: 50),
               MaterialButton(
                 minWidth: double.infinity,
@@ -121,13 +124,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 child: Text(
-                  "Login",
+                  "Sign Up",
                   style: MyTextStyle.bold.copyWith(
                     fontSize: 18,
                     color: enabled ? MyColors.white : MyColors.grey,
                   ),
                 ),
-                onPressed: enabled ? onPressedLogin : null,
+                onPressed: enabled ? onPressed : null,
               ),
               SizedBox(height: 20),
             ],

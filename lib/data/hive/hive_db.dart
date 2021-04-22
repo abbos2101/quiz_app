@@ -28,4 +28,12 @@ class HiveDB {
   Future<void> setLogin(bool value) async {
     (await _getBox()).put("LOGIN", value);
   }
+
+  Future<bool> getName() async {
+    return (await _getBox()).get("NAME") ?? true;
+  }
+
+  Future<void> setName(bool value) async {
+    (await _getBox()).put("NAME", value);
+  }
 }

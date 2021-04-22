@@ -128,8 +128,11 @@ class WBoard extends StatelessWidget {
               onPressed: onPressed,
               textColor: MyColors.white,
               child: Text(
-                "$buttonText",
-                style: MyTextStyle.regular.copyWith(fontSize: 18),
+                buttonText,
+                style: MyTextStyle.regular.copyWith(
+                  fontSize: 18,
+                  color: MyColors.white,
+                ),
               ),
             ),
           ),

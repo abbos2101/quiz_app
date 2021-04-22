@@ -19,19 +19,20 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: MyColors.screen,
       body: SafeArea(
-        child: WBottomNavigation(
-          index: index,
-          onTap: (value) => setState(() => index = value),
-          child: Builder(
-            builder: (context) {
-              if (index == 0) body = HomeHomeScreen.screen();
-              if (index == 2) body = HomeProfileScreen.screen();
-              return body;
-            },
-          ),
+        child: Builder(
+          builder: (context) {
+            if (index == 0) body = HomeHomeScreen.screen();
+            if (index == 2) body = HomeProfileScreen.screen();
+            return body;
+          },
         ),
+      ),
+      bottomNavigationBar: WBottomNavigation(
+        index: index,
+        onTap: (value) => setState(() => index = value),
       ),
     );
   }

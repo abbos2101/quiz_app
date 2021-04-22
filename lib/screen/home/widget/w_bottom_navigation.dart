@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/util/color.dart';
+import 'package:quiz_app/data/widget/w_transparent.dart';
 import 'w_menu_button.dart';
-import 'w_transparent.dart';
 
 class WBottomNavigation extends StatelessWidget {
-  final Widget? child;
   final int index;
   final ValueChanged<int> onTap;
   final VoidCallback? onPressedQuizCode;
@@ -13,7 +12,6 @@ class WBottomNavigation extends StatelessWidget {
 
   WBottomNavigation({
     this.index = 0,
-    this.child,
     required this.onTap,
     this.onPressedQuizCode,
     this.onPressedPublicQuiz,
@@ -24,11 +22,6 @@ class WBottomNavigation extends StatelessWidget {
     return Stack(
       alignment: Alignment.bottomCenter,
       children: [
-        Container(
-          width: double.infinity,
-          height: double.infinity,
-          child: child,
-        ),
         WTransparent(
           visible: index == 1,
           child: Container(
@@ -72,7 +65,7 @@ class WBottomNavigation extends StatelessWidget {
           height: 100,
           decoration: BoxDecoration(
             color: MyColors.white,
-            boxShadow: [BoxShadow(color: MyColors.grey, blurRadius: 1)],
+            boxShadow: [BoxShadow(color: MyColors.grey, blurRadius: 2)],
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(40),
               topRight: Radius.circular(40),

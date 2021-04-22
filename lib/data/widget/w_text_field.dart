@@ -10,6 +10,7 @@ class WTextField extends StatelessWidget {
   final bool obscureText;
   final bool showButton;
   final VoidCallback? onPressedShow;
+  final Color? fillColor;
 
   WTextField({
     this.controller,
@@ -19,6 +20,7 @@ class WTextField extends StatelessWidget {
     this.obscureText = false,
     this.showButton = false,
     this.onPressedShow,
+    this.fillColor,
   });
 
   @override
@@ -31,7 +33,7 @@ class WTextField extends StatelessWidget {
         hintText: hintText,
         prefixIcon: iconData == null ? null : _prefixIcon(),
         suffixIcon: _suffixIcon(),
-        fillColor: MyColors.grey.withOpacity(0.1),
+        fillColor: fillColor ?? MyColors.grey.withOpacity(0.1),
         filled: true,
         enabledBorder: _enabledBorder(),
         focusedBorder: _focusedBorder(),

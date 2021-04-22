@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_app/data/util/color.dart';
+import 'package:quiz_app/data/widget/w_loading.dart';
 import 'bloc/setup_bloc.dart';
 import 'util/region_model.dart';
 import 'widget/widget.dart';
