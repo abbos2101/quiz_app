@@ -33,6 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: WBottomNavigation(
         index: index,
         onTap: (value) => setState(() => index = value),
+        child: body,
       ),
     );
   }

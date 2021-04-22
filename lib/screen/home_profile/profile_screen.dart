@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'widget/w_body.dart';
 
 class HomeProfileScreen extends StatefulWidget {
   static Widget screen() => HomeProfileScreen();
@@ -10,8 +11,6 @@ class HomeProfileScreen extends StatefulWidget {
 class _HomeProfileScreenState extends State<HomeProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Profile")),
-    );
+    return Scaffold(body: WBody());
   }
 }

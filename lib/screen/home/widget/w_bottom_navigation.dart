@@ -6,12 +6,14 @@ import 'w_menu_button.dart';
 
 class WBottomNavigation extends StatelessWidget {
   final int index;
+  final Widget? child;
   final ValueChanged<int> onTap;
   final VoidCallback? onPressedQuizCode;
   final VoidCallback? onPressedPublicQuiz;
 
   WBottomNavigation({
     this.index = 0,
+    this.child,
     required this.onTap,
     this.onPressedQuizCode,
     this.onPressedPublicQuiz,
@@ -22,6 +24,13 @@ class WBottomNavigation extends StatelessWidget {
     return Stack(
       alignment: Alignment.bottomCenter,
       children: [
+        index == 1
+            ? Container(
+                width: double.infinity,
+                height: double.infinity,
+                child: child,
+              )
+            : SizedBox(),
         WTransparent(
           visible: index == 1,
           child: Container(

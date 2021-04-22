@@ -10,11 +10,11 @@ class WList extends StatelessWidget {
       itemBuilder: (context, index) => Container(
         width: double.infinity,
         height: 100,
-        margin: EdgeInsets.only(bottom: 20),
+        margin: EdgeInsets.only(bottom: 20, left: 2, right: 2, top: 2),
         decoration: BoxDecoration(
-          color: MyColors.white,
-          borderRadius: BorderRadius.circular(20),
-        ),
+            color: MyColors.white,
+            borderRadius: BorderRadius.circular(30),
+            boxShadow: [BoxShadow(color: MyColors.grey, blurRadius: 1)]),
         child: Row(
           children: [
             Container(
