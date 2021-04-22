@@ -13,7 +13,7 @@ class WItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.all(20),
+      margin: EdgeInsets.only(left: 20, right: 20, top: 20),
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: MyColors.white,

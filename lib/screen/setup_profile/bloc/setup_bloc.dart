@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
-import 'package:quiz_app/screen/home/home_screen.dart';
+import 'package:quiz_app/screen/main/main_screen.dart';
 import '../util/my_region.dart';
 import '../util/my_image_picker.dart';
 import '../util/region_model.dart';
@@ -51,7 +51,7 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
     while (Navigator.canPop(context)) Navigator.pop(context);
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (_) => HomeScreen.screen()),
+      MaterialPageRoute(builder: (_) => MainScreen.screen()),
     );
   }
 
