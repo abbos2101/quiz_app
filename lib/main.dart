@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'screen/splash/splash_screen.dart';
+import 'screen/public_quiz/public_quiz_screen.dart';
 import 'di/locator.dart';
 import 'data/util/color.dart';
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: MyColors.primaryColor),
-      home: SplashScreen.screen(),
+      home: PublicQuizScreen.screen(),
     );
   }
 }
