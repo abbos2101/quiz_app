@@ -3,6 +3,8 @@ import 'package:quiz_app/data/util/color.dart';
 import 'package:quiz_app/data/util/style.dart';
 
 class WTitle extends StatelessWidget {
+  final String name;
+  WTitle({required this.name});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,7 +21,7 @@ class WTitle extends StatelessWidget {
           Image.asset("assets/img/img_hand.png", height: 30),
           SizedBox(width: 10),
           Text("Hello,  ", style: MyTextStyle.regular),
-          Text("Robert!", style: MyTextStyle.normal),
+          Text(name, style: MyTextStyle.normal),
         ],
       ),
     );

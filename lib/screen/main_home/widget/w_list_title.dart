@@ -3,6 +3,9 @@ import 'package:quiz_app/data/util/color.dart';
 import 'package:quiz_app/data/util/style.dart';
 
 class WListTitle extends StatelessWidget {
+  final VoidCallback? onPressed;
+  WListTitle({this.onPressed});
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -23,7 +26,7 @@ class WListTitle extends StatelessWidget {
             color: MyColors.primaryColor,
             size: 50,
           ),
-          onPressed: () {},
+          onPressed: onPressed,
         )
       ],
     );
