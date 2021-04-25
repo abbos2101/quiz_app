@@ -7,6 +7,7 @@ class WTextField extends StatelessWidget {
   final IconData? iconData;
   final String hintText;
   final TextInputType? keyboardType;
+  final TextCapitalization textCapitalization;
   final bool obscureText;
   final bool showButton;
   final VoidCallback? onPressedShow;
@@ -17,6 +18,7 @@ class WTextField extends StatelessWidget {
     this.iconData,
     this.hintText = "",
     this.keyboardType,
+    this.textCapitalization = TextCapitalization.none,
     this.obscureText = false,
     this.showButton = false,
     this.onPressedShow,
@@ -27,6 +29,7 @@ class WTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
+      textCapitalization: textCapitalization,
       keyboardType: keyboardType,
       obscureText: obscureText,
       decoration: InputDecoration(

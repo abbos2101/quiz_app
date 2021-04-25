@@ -8,25 +8,24 @@ class WList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: 10,
-      itemBuilder: (context, index) => MaterialButton(
-        padding: EdgeInsets.all(0),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30),
-        ),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => DoingQuizScreen.screen()),
-          );
-        },
-        child: Container(
-          width: double.infinity,
-          height: 100,
-          margin: EdgeInsets.only(bottom: 20, left: 2, right: 2, top: 2),
-          decoration: BoxDecoration(
-              color: MyColors.white,
-              borderRadius: BorderRadius.circular(30),
-              boxShadow: [BoxShadow(color: MyColors.grey, blurRadius: 1)]),
+      itemBuilder: (context, index) => Container(
+        width: double.infinity,
+        height: 100,
+        margin: EdgeInsets.only(bottom: 20, left: 2, right: 2, top: 2),
+        decoration: BoxDecoration(
+            color: MyColors.white,
+            borderRadius: BorderRadius.circular(30),
+            boxShadow: [BoxShadow(color: MyColors.grey, blurRadius: 1)]),
+        child: MaterialButton(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => DoingQuizScreen.screen()),
+            );
+          },
           child: Row(
             children: [
               Container(
