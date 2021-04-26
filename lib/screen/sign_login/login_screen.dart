@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/data/util/color.dart';
 import 'package:quiz_app/data/util/style.dart';
 import 'package:quiz_app/screen/forgot_password/forgot_screen.dart';
+import 'package:quiz_app/screen/main/main_screen.dart';
 import 'package:quiz_app/screen/sign/sign_imp.dart';
 import 'package:quiz_app/data/widget/widget.dart';
 
@@ -45,17 +46,19 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void onPressedLogin() async {
     if (widget.imp != null) {
+      FocusScope.of(context).requestFocus(FocusNode());
       widget.imp!.showLoading(true);
       await Future.delayed(Duration(seconds: 3));
       widget.imp!.showLoading(false);
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (_) => ForgotScreen.screen()),
-      // );
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => MainScreen.screen()),
+      );
     }
   }
 
   void onPressedForgot() async {
+    FocusScope.of(context).requestFocus(FocusNode());
     Navigator.push(
       context,
       MaterialPageRoute(builder: (_) => ForgotScreen.screen()),

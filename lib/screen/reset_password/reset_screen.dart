@@ -14,6 +14,7 @@ class _ResetScreenState extends State<ResetScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.primaryColor,
+      appBar: AppBar(title: Text("Reset Password")),
       body: WBackground(
         visible: true,
         child: Column(

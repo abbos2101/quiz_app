@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:quiz_app/screen/forgot_password/forgot_screen.dart';
+import 'screen/splash/splash_screen.dart';
 import 'di/locator.dart';
 import 'data/util/color.dart';
 
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: MyColors.primaryColor),
-      home: ForgotScreen.screen(),
+      home: SplashScreen.screen(),
     );
   }
 }
