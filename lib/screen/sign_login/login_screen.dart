@@ -102,7 +102,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   Expanded(child: SizedBox()),
                   CupertinoButton(
-                    child: Text("Forgot Password?", style: MyTextStyle.normal),
+                    child: Text(
+                      "Forgot Password?",
+                      style: MyTextStyle.normal.copyWith(
+                        color: MyColors.primaryColor,
+                      ),
+                    ),
                     onPressed: onPressedForgot,
                   ),
                 ],

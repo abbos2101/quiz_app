@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/util/color.dart';
 import 'package:quiz_app/data/util/style.dart';
+import 'package:quiz_app/data/widget/w_background.dart';
 
 class WQuest extends StatelessWidget {
   final String title;
@@ -70,47 +71,52 @@ class _Top extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(30),
-      child: Column(
-        children: [
-          Row(
+    return Stack(
+      children: [
+        WBackground(visible: true),
+        Container(
+          padding: EdgeInsets.all(30),
+          child: Column(
             children: [
-              Expanded(
-                child: Text(
-                  title,
-                  style: MyTextStyle.bold.copyWith(color: MyColors.white),
-                ),
-              ),
-              Container(
-                padding:
-                    EdgeInsets.only(left: 30, right: 30, top: 15, bottom: 15),
-                child: Text(
-                  time,
-                  style: MyTextStyle.normal.copyWith(
-                    color: MyColors.white,
-                    fontSize: 14,
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      title,
+                      style: MyTextStyle.bold.copyWith(color: MyColors.white),
+                    ),
                   ),
-                ),
-                decoration: BoxDecoration(
-                  color: MyColors.white.withOpacity(0.2),
-                  borderRadius: BorderRadius.circular(40),
-                ),
+                  Container(
+                    padding:
+                    EdgeInsets.only(left: 30, right: 30, top: 15, bottom: 15),
+                    child: Text(
+                      time,
+                      style: MyTextStyle.normal.copyWith(
+                        color: MyColors.white,
+                        fontSize: 14,
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                      color: MyColors.white.withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                  ),
+                ],
               ),
+              SizedBox(height: 30),
+              Expanded(
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      color: MyColors.white,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Text(question, style: MyTextStyle.normal),
+                  )),
             ],
           ),
-          SizedBox(height: 30),
-          Expanded(
-              child: Container(
-            padding: EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              color: MyColors.white,
-              borderRadius: BorderRadius.circular(40),
-            ),
-            child: Text(question, style: MyTextStyle.normal),
-          )),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

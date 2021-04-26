@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/util/color.dart';
 import 'package:quiz_app/data/util/style.dart';
+import 'package:quiz_app/data/widget/w_background.dart';
 
 class WFinish extends StatelessWidget {
   final String title;
@@ -51,39 +52,47 @@ class _Top extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
       children: [
-        SizedBox(height: 20),
-        Text(
-          title,
-          style: MyTextStyle.bold.copyWith(color: MyColors.white),
-        ),
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(50),
-            child: Image.asset("assets/img/img_success.png"),
-          ),
-        ),
-        Container(
-          width: 150,
-          height: 60,
-          decoration: BoxDecoration(
-            color: MyColors.white,
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+        WBackground(visible: true),
+        SizedBox(
+          width: double.infinity,
+          child: Column(
             children: [
-              Icon(Icons.star, color: MyColors.yellow, size: 30),
-              SizedBox(width: 10),
+              SizedBox(height: 20),
               Text(
-                "$ball",
-                style: MyTextStyle.bold.copyWith(fontSize: 18),
+                title,
+                style: MyTextStyle.bold.copyWith(color: MyColors.white),
               ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(50),
+                  child: Image.asset("assets/img/img_success.png"),
+                ),
+              ),
+              Container(
+                width: 150,
+                height: 60,
+                decoration: BoxDecoration(
+                  color: MyColors.white,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.star, color: MyColors.yellow, size: 30),
+                    SizedBox(width: 10),
+                    Text(
+                      "$ball",
+                      style: MyTextStyle.bold.copyWith(fontSize: 18),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 20),
             ],
           ),
         ),
-        SizedBox(height: 20),
       ],
     );
   }

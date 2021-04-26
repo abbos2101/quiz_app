@@ -6,8 +6,9 @@ import 'package:quiz_app/data/util/style.dart';
 class WItem extends StatelessWidget {
   final IconData iconData;
   final String text;
+  final VoidCallback? onPressed;
 
-  WItem({required this.iconData, this.text = ""});
+  WItem({required this.iconData, this.text = "", this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,7 @@ class WItem extends StatelessWidget {
             minWidth: 50,
             height: 50,
             padding: EdgeInsets.all(0),
-            onPressed: () {},
+            onPressed: onPressed,
             shape: CircleBorder(),
             child: Icon(
               Icons.chevron_right_outlined,

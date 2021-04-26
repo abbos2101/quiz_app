@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/data/util/color.dart';
+import 'package:quiz_app/data/widget/w_background.dart';
 
 class ResetScreen extends StatefulWidget {
   static Widget screen() => ResetScreen();
@@ -10,6 +12,27 @@ class ResetScreen extends StatefulWidget {
 class _ResetScreenState extends State<ResetScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      backgroundColor: MyColors.primaryColor,
+      body: WBackground(
+        visible: true,
+        child: Column(
+          children: [
+            Expanded(child: SizedBox()),
+            Expanded(
+              flex: 3,
+              child: Container(
+                decoration: BoxDecoration(
+                    color: MyColors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40),
+                      topRight: Radius.circular(40),
+                    )),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

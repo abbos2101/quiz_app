@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/data/util/color.dart';
 import 'package:quiz_app/data/util/style.dart';
 import 'package:quiz_app/data/widget/w_text_field.dart';
+import 'package:quiz_app/data/widget/w_background.dart';
 
 class WSearch extends StatelessWidget {
   final TextEditingController controller;
   final VoidCallback? onPressedSearch;
 
-  WSearch({required this.controller,this.onPressedSearch});
+  WSearch({required this.controller, this.onPressedSearch});
 
   @override
   Widget build(BuildContext context) {

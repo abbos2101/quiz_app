@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quiz_app/data/util/color.dart';
 import 'package:quiz_app/screen/sign_login/login_screen.dart';
 import 'package:quiz_app/screen/sign_signup/signup_screen.dart';
@@ -30,12 +31,17 @@ class WBody extends StatelessWidget {
       color: MyColors.primaryColor,
       child: Stack(
         children: [
+          _widgetBackground(),
           _widgetMain(),
           _widgetImg(),
           WLoading(visible: loading),
         ],
       ),
     );
+  }
+
+  Widget _widgetBackground() {
+    return WBackground(visible: true);
   }
 
   Widget _widgetMain() {
@@ -108,7 +114,13 @@ class WBody extends StatelessWidget {
       children: [
         Expanded(
           flex: 2,
-          child: Center(child: Image.asset("assets/img/img_sign.png")),
+          child: Center(
+            child: Image.asset(
+              "assets/img/img_sign.png",
+              width: 100,
+              height: 100,
+            ),
+          ),
         ),
         Expanded(flex: 3, child: SizedBox()),
       ],

@@ -7,20 +7,24 @@ class WTransparent extends StatelessWidget {
   final Widget? child;
   final AlignmentGeometry? alignment;
 
-  WTransparent({required this.visible, this.child, this.alignment});
+  WTransparent({
+    required this.visible,
+    this.child,
+    this.alignment = Alignment.center,
+  });
 
   @override
   Widget build(BuildContext context) {
     if (!visible) return SizedBox();
     return BackdropFilter(
-      filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+      filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
       child: Container(
         width: double.infinity,
         height: double.infinity,
         alignment: alignment,
         child: child,
         decoration: new BoxDecoration(
-          color: Colors.grey.shade500.withOpacity(0.2),
+          color: Colors.grey.shade100.withOpacity(0.5),
         ),
       ),
     );

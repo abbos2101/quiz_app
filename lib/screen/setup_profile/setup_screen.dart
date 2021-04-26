@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_app/data/util/color.dart';
+import 'package:quiz_app/data/widget/w_background.dart';
 import 'package:quiz_app/data/widget/w_loading.dart';
 import 'bloc/setup_bloc.dart';
 import 'util/region_model.dart';
@@ -38,7 +39,12 @@ class _SetupScreenState extends State<SetupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.primaryColor,
-      body: widgetBody(),
+      body: Stack(
+        children: [
+          WBackground(visible: true),
+          widgetBody(),
+        ],
+      ),
     );
   }
 

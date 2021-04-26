@@ -10,7 +10,7 @@ class WImageTitle extends StatelessWidget {
           child: Row(
             children: [
               SizedBox(width: 30),
-              Image.asset("assets/img/img_setup.png"),
+              Image.asset("assets/img/img_setup.png", height: 100),
               Expanded(child: SizedBox()),
             ],
           ),
