@@ -12,6 +12,7 @@ class WTextField extends StatelessWidget {
   final bool showButton;
   final VoidCallback? onPressedShow;
   final Color? fillColor;
+  final Color? borderColor;
 
   WTextField({
     this.controller,
@@ -23,6 +24,7 @@ class WTextField extends StatelessWidget {
     this.showButton = false,
     this.onPressedShow,
     this.fillColor,
+    this.borderColor,
   });
 
   @override
@@ -51,7 +53,7 @@ class WTextField extends StatelessWidget {
         color: controller == null
             ? MyColors.transparent
             : (controller!.text.isNotEmpty
-                ? MyColors.primaryColor
+                ? borderColor ?? MyColors.primaryColor
                 : MyColors.transparent),
         width: 2,
       ),
@@ -63,7 +65,7 @@ class WTextField extends StatelessWidget {
       borderRadius: BorderRadius.circular(25),
       borderSide: BorderSide(
         width: 2,
-        color: MyColors.primaryColor,
+        color: borderColor ?? MyColors.primaryColor,
       ),
     );
   }

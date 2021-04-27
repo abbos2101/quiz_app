@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_app/data/util/color.dart';
 import 'package:quiz_app/data/widget/widget.dart';
-import 'package:quiz_app/screen/reset_password/reset_screen.dart';
+import 'package:quiz_app/screen/reset_password/reset_password_screen.dart';
 import 'bloc/forgot_bloc.dart';
 import 'widget/widget.dart';
 
@@ -46,7 +46,10 @@ class _ForgotScreenState extends State<ForgotScreen> {
             if (state is InitialState)
               return WInitial(
                 controller: controller,
-                onPressed: () => bloc.add(ConfirmEvent(email: controller.text)),
+                onPressed: () {
+                  FocusScope.of(context).requestFocus(FocusNode());
+                  bloc.add(ConfirmEvent(email: controller.text));
+                },
               );
             if (state is VerifyState)
               return WVerify(
@@ -62,7 +65,8 @@ class _ForgotScreenState extends State<ForgotScreen> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (_) => ResetScreen.screen()),
+                    MaterialPageRoute(
+                        builder: (_) => ResetPasswordScreen.screen()),
                   );
                 },
               );

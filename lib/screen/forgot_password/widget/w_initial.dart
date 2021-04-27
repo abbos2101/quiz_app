@@ -15,7 +15,7 @@ class WInitial extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Stack(
-          overflow: Overflow.visible,
+          clipBehavior: Clip.none,
           children: [
             Container(
               padding: EdgeInsets.only(
@@ -110,9 +110,7 @@ class WInitial extends StatelessWidget {
             Positioned(
               top: -50,
               left: 30,
-              child: Container(
-                child: Image.asset("assets/img/img_setup.png", height: 80),
-              ),
+              child: Image.asset("assets/img/img_setup.png", height: 80),
             ),
           ],
         ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_app/data/util/color.dart';
-import 'package:quiz_app/screen/leader_board/leader_screen.dart';
+import 'package:quiz_app/screen/leader_board/leader_board_screen.dart';
 import 'bloc/doing_quiz_bloc.dart';
 import 'widget/widget.dart';
 
@@ -74,7 +74,7 @@ class _DoingQuizScreenState extends State<DoingQuizScreen> {
                 ball: state.ball,
                 rate: state.rate,
                 onPressedLeader: (){
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>LeaderScreen.screen()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>LeaderBoardScreen.screen()));
                 },
                 onPressedHome: () => Navigator.pop(context),
               );

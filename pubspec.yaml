@@ -19,6 +19,7 @@ dependencies:
   path_provider: ^2.0.1
   image_picker: ^0.7.4
   pin_code_text_field: ^1.8.0
+  modal_bottom_sheet: ^2.0.0
 
 flutter:
   uses-material-design: true
