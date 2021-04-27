@@ -9,7 +9,7 @@ class WBackground extends StatelessWidget {
   final AlignmentGeometry? alignment;
 
   WBackground({
-    required this.visible,
+    this.visible = true,
     this.child,
     this.alignment = Alignment.center,
   });
