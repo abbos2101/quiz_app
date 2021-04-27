@@ -39,6 +39,7 @@ class _ForgotScreenState extends State<ForgotScreen> {
     return Scaffold(
       backgroundColor: MyColors.primaryColor,
       body: WBackground(
+        alignment: Alignment.bottomCenter,
         visible: true,
         child: BlocBuilder<ForgotBloc, ForgotState>(
           builder: (context, state) {
