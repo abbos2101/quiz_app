@@ -70,20 +70,23 @@ class WBottomNavigation extends StatelessWidget {
         ),
         Positioned(
           bottom: 40,
-          child: MaterialButton(
-            minWidth: 80,
-            height: 80,
-            padding: EdgeInsets.all(0),
-            color: MyColors.primaryColor,
-            child: Icon(
-              CupertinoIcons.compass,
-              size: 40,
-              color: MyColors.white,
+          child: GestureDetector(
+            excludeFromSemantics: false,
+            onTap: () => onTap(1),
+            child: Container(
+              width: 80,
+              height: 80,
+              padding: EdgeInsets.all(0),
+              decoration: BoxDecoration(
+                color: MyColors.primaryColor,
+                borderRadius: BorderRadius.circular(30),
+              ),
+              child: Icon(
+                CupertinoIcons.compass,
+                size: 40,
+                color: MyColors.white,
+              ),
             ),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
-            ),
-            onPressed: () => onTap(1),
           ),
         ),
       ],

@@ -24,13 +24,31 @@ class _MainScreenState extends State<MainScreen> {
       resizeToAvoidBottomInset: true,
       backgroundColor: MyColors.screen,
       body: SafeArea(
-        child: Builder(
-          builder: (context) {
-            if (index == 0) body = HomeScreen.screen();
-            if (index == 2) body = ProfileScreen.screen();
-            if (index == 1) body = Stack(children: [body, WTransparent()]);
-            return body;
-          },
+        child: Stack(
+          children: [
+            Builder(
+              builder: (context) {
+                if (index == 0) body = HomeScreen.screen();
+                if (index == 2) body = ProfileScreen.screen();
+                if (index == 1) body = Stack(children: [body, WTransparent()]);
+                return body;
+              },
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: GestureDetector(
+                onTap: () async {
+                  await showDialog(
+                    context: context,
+                    builder: (_) => WExploreDialog(),
+                  );
+                  setState(() => index = 0);
+                },
+                child:
+                    Container(width: 80, height: 40, color: Colors.transparent),
+              ),
+            ),
+          ],
         ),
       ),
       bottomNavigationBar: WBottomNavigation(
