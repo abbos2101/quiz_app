@@ -3,10 +3,7 @@ import 'sign_imp.dart';
 import 'package:quiz_app/screen/sign/widget/w_body.dart';
 
 class SignScreen extends StatefulWidget {
-  static Widget screen({bool isLogin = true}) => SignScreen(isLogin);
-
   final bool isLogin;
-
   const SignScreen(this.isLogin);
 
   @override

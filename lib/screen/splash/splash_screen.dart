@@ -5,11 +5,6 @@ import 'bloc/splash_bloc.dart';
 import 'widget/widget.dart';
 
 class SplashScreen extends StatefulWidget {
-  static Widget screen() => BlocProvider(
-        create: (context) => SplashBloc(context),
-        child: SplashScreen(),
-      );
-
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -19,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    bloc = BlocProvider.of(context);
+    bloc = SplashBloc(context);
     bloc.add(LaunchEvent());
     super.initState();
   }
@@ -32,15 +27,18 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: MyColors.white,
-      body: BlocBuilder<SplashBloc, SplashState>(
-        builder: (context, state) {
-          if (state is InitialState) return WInitial();
-          if (state is SloganState) return WSlogan();
-          if (state is LastState) return WLast();
-          throw Exception("$state is not found");
-        },
+    return BlocProvider.value(
+      value: bloc,
+      child: Scaffold(
+        backgroundColor: MyColors.white,
+        body: BlocBuilder<SplashBloc, SplashState>(
+          builder: (context, state) {
+            if (state is InitialState) return WInitial();
+            if (state is SloganState) return WSlogan();
+            if (state is LastState) return WLast();
+            throw Exception("$state is not found");
+          },
+        ),
       ),
     );
   }

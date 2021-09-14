@@ -8,8 +8,6 @@ import 'package:quiz_app/screen/sign/sign_imp.dart';
 import 'package:quiz_app/data/widget/widget.dart';
 
 class LoginScreen extends StatefulWidget {
-  static Widget screen({SignImp? imp}) => LoginScreen(imp);
-
   final SignImp? imp;
 
   const LoginScreen(this.imp);
@@ -52,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
       widget.imp!.showLoading(false);
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (_) => MainScreen.screen()),
+        CupertinoPageRoute(builder: (_) => MainScreen()),
       );
     }
   }
@@ -61,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
     FocusScope.of(context).requestFocus(FocusNode());
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (_) => ForgotScreen.screen()),
+      CupertinoPageRoute(builder: (_) => ForgotScreen()),
     );
   }
 

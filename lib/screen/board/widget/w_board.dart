@@ -27,8 +27,8 @@ class WBoard extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 60),
-          Expanded(flex: 5, child: _widgetImage()),
-          Expanded(child: SizedBox()),
+          Expanded(flex: 3, child: _widgetImage()),
+          Expanded(flex: 1,child: SizedBox()),
           Expanded(flex: 4, child: _widgetBottom()),
         ],
       ),

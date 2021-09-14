@@ -96,8 +96,8 @@ class WBody extends StatelessWidget {
                 Expanded(
                   child: Builder(
                     builder: (BuildContext context) {
-                      if (isLogin) return LoginScreen.screen(imp: imp);
-                      return SignupScreen.screen(imp: imp);
+                      if (isLogin) return LoginScreen(imp);
+                      return SignupScreen(imp);
                     },
                   ),
                 ),

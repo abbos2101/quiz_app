@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:bloc/bloc.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:quiz_app/screen/main/main_screen.dart';
@@ -51,7 +52,7 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
     while (Navigator.canPop(context)) Navigator.pop(context);
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (_) => MainScreen.screen()),
+      CupertinoPageRoute(builder: (_) => MainScreen()),
     );
   }
 

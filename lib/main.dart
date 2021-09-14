@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:quiz_app/screen/forgot_password/forgot_screen.dart';
-import 'package:quiz_app/screen/leader_board/leader_board_screen.dart';
-import 'package:quiz_app/screen/main/main_screen.dart';
-import 'package:quiz_app/screen/reset_password/reset_password_screen.dart';
-import 'package:quiz_app/screen/setup_profile/setup_screen.dart';
-import 'package:quiz_app/screen/sign/sign_screen.dart';
-import 'screen/splash/splash_screen.dart';
 import 'di/locator.dart';
 import 'data/util/color.dart';
+import 'screen/splash/splash_screen.dart';
 
 void main() {
   locatorSetup();
@@ -26,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: MyColors.primaryColor),
-      home: MainScreen.screen(),
+      home: SplashScreen(),
     );
   }
 }

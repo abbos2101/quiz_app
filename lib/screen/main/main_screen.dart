@@ -5,11 +5,9 @@ import 'package:quiz_app/data/widget/w_transparent.dart';
 import 'widget/w_bottom_navigation.dart';
 import 'widget/w_explore_dialog.dart';
 import 'package:quiz_app/screen/main_home/home_screen.dart';
-import 'package:quiz_app/screen/main_profile/profile_screen.dart';
+import 'package:quiz_app/screen/main_profile/main_profile_screen.dart';
 
 class MainScreen extends StatefulWidget {
-  static Widget screen() => MainScreen();
-
   @override
   _MainScreenState createState() => _MainScreenState();
 }
@@ -28,8 +26,8 @@ class _MainScreenState extends State<MainScreen> {
           children: [
             Builder(
               builder: (context) {
-                if (index == 0) body = HomeScreen.screen();
-                if (index == 2) body = ProfileScreen.screen();
+                if (index == 0) body = HomeScreen();
+                if (index == 2) body = MainProfileScreen();
                 if (index == 1) body = Stack(children: [body, WTransparent()]);
                 return body;
               },

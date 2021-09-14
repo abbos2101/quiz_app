@@ -6,8 +6,6 @@ import 'my_model.dart';
 import 'widget/w_item.dart';
 
 class LeaderBoardScreen extends StatefulWidget {
-  static Widget screen() => LeaderBoardScreen();
-
   @override
   _LeaderBoardScreenState createState() => _LeaderBoardScreenState();
 }

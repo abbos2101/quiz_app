@@ -7,8 +7,6 @@ import 'package:quiz_app/screen/sign/sign_screen.dart';
 import 'widget/widget.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
-  static Widget screen() => ResetPasswordScreen();
-
   @override
   _ResetPasswordScreenState createState() => _ResetPasswordScreenState();
 }
@@ -127,8 +125,8 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                             Navigator.pop(context);
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                              builder: (_) => SignScreen.screen(),
+                            CupertinoPageRoute(
+                              builder: (_) => SignScreen(true),
                             ),
                           );
                         },

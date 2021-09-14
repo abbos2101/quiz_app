@@ -4,8 +4,6 @@ import 'widget/widget.dart';
 import 'model/quiz_model.dart';
 
 class PublicQuizScreen extends StatefulWidget {
-  static Widget screen() => PublicQuizScreen();
-
   @override
   _PublicQuizScreenState createState() => _PublicQuizScreenState();
 }

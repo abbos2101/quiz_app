@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/util/color.dart';
 import 'package:quiz_app/data/util/style.dart';
@@ -7,8 +8,6 @@ import 'package:quiz_app/screen/quiz_code/quiz_code_screen.dart';
 import 'widget/widget.dart';
 
 class HomeScreen extends StatefulWidget {
-  static Widget screen() => HomeScreen();
-
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -47,10 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   FocusScope.of(context).requestFocus(FocusNode());
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (_) => QuizCodeScreen.screen(
-                        text: controller.text,
-                      ),
+                    CupertinoPageRoute(
+                      builder: (_) => QuizCodeScreen(controller.text),
                     ),
                   );
                 },
@@ -60,8 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (_) => PublicQuizScreen.screen()),
+                    CupertinoPageRoute(builder: (_) => PublicQuizScreen()),
                   );
                 },
               ),
@@ -91,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (_) => DoingQuizScreen.screen()),
+              CupertinoPageRoute(builder: (_) => DoingQuizScreen()),
             );
           },
           child: Row(

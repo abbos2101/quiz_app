@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:quiz_app/data/hive/hive_db.dart';
@@ -33,14 +34,14 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     if (await _hive.isBoard()) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => BoardScreen.screen()),
+        CupertinoPageRoute(builder: (_) => BoardScreen()),
       );
       return;
     }
     if (await _hive.isLogin()) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => SignScreen.screen()),
+        CupertinoPageRoute(builder: (_) => SignScreen(true)),
       );
       return;
     }

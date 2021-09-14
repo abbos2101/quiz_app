@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/util/color.dart';
 import 'package:quiz_app/data/util/style.dart';
@@ -23,7 +24,7 @@ class WList extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (_) => DoingQuizScreen.screen()),
+              CupertinoPageRoute(builder: (_) => DoingQuizScreen()),
             );
           },
           child: Row(

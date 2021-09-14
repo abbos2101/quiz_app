@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:quiz_app/data/hive/hive_db.dart';
@@ -36,9 +37,7 @@ class BoardBloc extends Bloc<BoardEvent, BoardState> {
       await _hive.setBoard(false);
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(
-          builder: (_) => SignScreen.screen(),
-        ),
+        CupertinoPageRoute(builder: (_) => SignScreen(true)),
       );
       return;
     }

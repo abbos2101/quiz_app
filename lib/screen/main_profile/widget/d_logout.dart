@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/util/color.dart';
 import 'package:quiz_app/data/util/style.dart';
@@ -83,8 +84,8 @@ class DLogout extends StatelessWidget {
                                   Navigator.pop(context);
                                 Navigator.pushReplacement(
                                   context,
-                                  MaterialPageRoute(
-                                    builder: (_) => SignScreen.screen(),
+                                  CupertinoPageRoute(
+                                    builder: (_) => SignScreen(true),
                                   ),
                                 );
                               },

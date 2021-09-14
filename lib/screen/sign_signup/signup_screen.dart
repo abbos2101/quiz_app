@@ -7,8 +7,6 @@ import 'package:quiz_app/screen/sign/sign_imp.dart';
 import 'package:quiz_app/data/widget/widget.dart';
 
 class SignupScreen extends StatefulWidget {
-  static Widget screen({SignImp? imp}) => SignupScreen(imp);
-
   final SignImp? imp;
 
   const SignupScreen(this.imp);
@@ -59,7 +57,7 @@ class _SignupScreenState extends State<SignupScreen> {
       ctrlPassword.clear();
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (_) => SetupScreen.screen()),
+        CupertinoPageRoute(builder: (_) => SetupScreen()),
       );
     }
   }

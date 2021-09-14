@@ -4,14 +4,12 @@ import 'package:quiz_app/data/util/color.dart';
 import 'package:quiz_app/data/util/style.dart';
 import 'widget/widget.dart';
 
-class ProfileScreen extends StatefulWidget {
-  static Widget screen() => ProfileScreen();
-
+class MainProfileScreen extends StatefulWidget {
   @override
-  _ProfileScreenState createState() => _ProfileScreenState();
+  _MainProfileScreenState createState() => _MainProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _MainProfileScreenState extends State<MainProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

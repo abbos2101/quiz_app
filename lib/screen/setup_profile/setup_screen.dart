@@ -10,11 +10,6 @@ import 'util/region_model.dart';
 import 'widget/widget.dart';
 
 class SetupScreen extends StatefulWidget {
-  static Widget screen() => BlocProvider(
-        create: (context) => SetupBloc(context),
-        child: SetupScreen(),
-      );
-
   @override
   _SetupScreenState createState() => _SetupScreenState();
 }
@@ -24,7 +19,7 @@ class _SetupScreenState extends State<SetupScreen> {
 
   @override
   void initState() {
-    bloc = BlocProvider.of<SetupBloc>(context);
+    bloc = SetupBloc(context);
     bloc.add(LaunchEvent());
     super.initState();
   }
@@ -37,13 +32,16 @@ class _SetupScreenState extends State<SetupScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: MyColors.primaryColor,
-      body: Stack(
-        children: [
-          WBackground(visible: true),
-          widgetBody(),
-        ],
+    return BlocProvider.value(
+      value: bloc,
+      child: Scaffold(
+        backgroundColor: MyColors.primaryColor,
+        body: Stack(
+          children: [
+            WBackground(visible: true),
+            widgetBody(),
+          ],
+        ),
       ),
     );
   }
@@ -84,7 +82,7 @@ class _SetupScreenState extends State<SetupScreen> {
       children: [
         Expanded(child: SizedBox()),
         Expanded(
-          flex: 4,
+          flex: 5,
           child: Container(
             width: double.infinity,
             padding: EdgeInsets.all(20),
